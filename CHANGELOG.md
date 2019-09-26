@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.1.2...v1.1.3) (2019-09-26)
+
+
+### Bug Fixes
+
+* **commit-message:** fix commit message: skip-ci ([cc7c983](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/cc7c983))
+
 ## [1.1.2](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.1.1...v1.1.2) (2019-09-26)
 
 

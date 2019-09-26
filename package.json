@@ -1,0 +1,49 @@
+{
+  "author": "Oleg Koval <kvl.olg@gmail.com>",
+  "dependencies": {
+    "@semantic-release/changelog": "^3.0.4",
+    "@semantic-release/commit-analyzer": "^6.3.0",
+    "@semantic-release/git": "^7.0.16",
+    "@semantic-release/github": "^5.4.3",
+    "@semantic-release/npm": "^5.1.15",
+    "@semantic-release/release-notes-generator": "^7.3.0"
+  },
+  "description": "Semantic-release Plugin for easy publishing to NPM, Github or Github Package Registry.",
+  "devDependencies": {
+    "semantic-release": "^15.13.24"
+  },
+  "files": [
+    ".releaserc.yaml"
+  ],
+  "keywords": [
+    "changelog",
+    "git",
+    "github-package-registry",
+    "github-publish",
+    "github",
+    "npm-publish",
+    "npm",
+    "publish",
+    "releaserc",
+    "release",
+    "semantic-release-config",
+    "semantic-release"
+  ],
+  "license": "MIT",
+  "main": ".releaserc.yaml",
+  "name": "semantic-release-npm-github-publish",
+  "peerDependencies": {
+    "semantic-release": ">=15.13.24"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/oleg-koval/semantic-release-npm-github-publish.git"
+  },
+  "scripts": {
+    "semantic-release": "semantic-release"
+  },
+  "version": "0.0.0-development"
+}

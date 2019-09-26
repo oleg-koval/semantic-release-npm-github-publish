@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.0.1...v1.1.0) (2019-09-26)
+
+
+### Features
+
+* **file-format:** use json file instead of yaml ([acd3f8d](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/acd3f8d))
+
 ## [1.0.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.0.0...v1.0.1) (2019-09-26)
 
 

@@ -8,7 +8,7 @@
     "@semantic-release/npm": "^5.1.15",
     "@semantic-release/release-notes-generator": "^7.3.0"
   },
-  "description": "Semantic-release Plugin for easy publishing to NPM, Github or Github Package Registry.",
+  "description": "Semantic-release shareable configuration for easy publishing to NPM, Github or Github Package Registry.",
   "devDependencies": {
     "semantic-release": "^15.13.24"
   },

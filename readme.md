@@ -7,6 +7,6 @@
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
-> Semantic-release Plugin for easy publishing to NPM, Github or Github Package Registry.
+> Semantic-release shareable configuration for easy publishing to NPM, Github or Github Package Registry.
 
 TODO (oleg-koval) [2019-12-01] Add more sections.

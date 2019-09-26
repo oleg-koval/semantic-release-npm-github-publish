@@ -46,7 +46,7 @@
           "package-lock.json",
           "CHANGELOG.md"
         ],
-        "message": "release(travis): Release ${nextRelease.version}\n\n[skip ci]\n\n${nextRelease.notes}"
+        "message": "chore(release): Release ${nextRelease.version}\n\n[skip ci]\n\n${nextRelease.notes}"
       }
     ],
     "@semantic-release/github"

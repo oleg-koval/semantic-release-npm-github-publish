@@ -13,7 +13,7 @@
     "semantic-release": "^15.13.24"
   },
   "files": [
-    ".releaserc.yaml"
+    ".releaserc.json"
   ],
   "keywords": [
     "changelog",
@@ -27,10 +27,11 @@
     "releaserc",
     "release",
     "semantic-release-config",
-    "semantic-release"
+    "semantic-release",
+    ".releaserc.json"
   ],
   "license": "MIT",
-  "main": ".releaserc.yaml",
+  "main": ".releaserc.json",
   "name": "semantic-release-npm-github-publish",
   "peerDependencies": {
     "semantic-release": ">=15.13.24"

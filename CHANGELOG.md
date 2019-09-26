@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.1.1...v1.1.2) (2019-09-26)
+
+
+### Bug Fixes
+
+* **commit-message:** use release keyword ([a33577a](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/a33577a))
+
 ## [1.1.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.1.0...v1.1.1) (2019-09-26)
 
 

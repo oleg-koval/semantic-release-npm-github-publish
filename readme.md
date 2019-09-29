@@ -23,7 +23,7 @@
 ## About
 
 - Using [@semantic-release/commit-analyzer](https://github.com/semantic-release/commit-analyzer) ensures that commits are conformed to the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.4/). For any of these keywords: **build, ci, chore, docs, refactor, style, test** - patch version will be created.
-- Publishes the same new version to [NPM](https://npmjs.org).
+- Publishes the new version to [NPM](https://npmjs.org).
 - Bumps a version in package.json.
 - Creates or updates a changelog file.
 - Releases new release for Github.

@@ -1,3 +1,5 @@
+## [1.1.8](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.1.7...v1.1.8) (2019-09-29)
+
 ## [1.1.7](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.1.6...v1.1.7) (2019-09-29)
 
 ## [1.1.6](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.1.5...v1.1.6) (2019-09-29)

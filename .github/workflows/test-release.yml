@@ -12,6 +12,9 @@ jobs:
           node-version: 12
       - env:
           CI: true
+        run: printenv
+      - env:
+          CI: true
         run: npm ci
       - env:
           CI: true

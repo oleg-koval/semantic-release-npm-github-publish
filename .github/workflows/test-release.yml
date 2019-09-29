@@ -12,13 +12,10 @@ jobs:
           node-version: 12
       - env:
           CI: true
-        run: printenv
-      - env:
-          CI: true
         run: npm ci
       - env:
           CI: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: echo $GITHUB_REF > temp.txt && cat temp.txt && npx semantic-release --dry-run --debug
+        run: temp.txt && cat temp.txt && npx semantic-release --dry-run --debug -b $GITHUB_REF

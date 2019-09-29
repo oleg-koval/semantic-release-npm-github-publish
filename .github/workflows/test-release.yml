@@ -21,4 +21,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: echo ${{ env.GITHUB_REF }} | npx semantic-release --dry-run --debug
+        run: echo $GITHUB_REF | npx semantic-release --dry-run --debug

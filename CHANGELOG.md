@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.1.10...v1.2.0) (2019-10-04)
+
+
+### Features
+
+* **release:** add custom release-notes generator ([ed4a8e567ec57cfed456be9af968d9918d6fe522](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/ed4a8e567ec57cfed456be9af968d9918d6fe522))
+
 ## [1.1.10](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.1.9...v1.1.10) (2019-09-29)
 
 ## [1.1.9](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.1.8...v1.1.9) (2019-09-29)

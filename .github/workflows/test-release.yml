@@ -6,16 +6,23 @@ jobs:
   test_publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      -
+        uses: actions/checkout@v1
+      -
+        uses: actions/setup-node@v1
         with:
           node-version: 12
-      - env:
+      -
+        env:
           CI: true
-        run: npm ci
-      - env:
+        run: "npm ci"
+      -
+        env:
           CI: true
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: ./scripts/dry-run.sh
+          GH_TOKEN: "${{ secrets.GH_TOKEN }}"
+          GITHUB_HEAD_REF: $GITHUB_HEAD_REF
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
+        run: |
+            echo "//npm.pkg.github.com/:_authToken=$GITHUB_TOKEN" > /home/runner/work/_temp/.npmrc
+            npx semantic-release --dry-run --debug -b $GITHUB_HEAD_REF

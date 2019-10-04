@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.2.0...v1.2.1) (2019-10-04)
+
+
+### Bug Fixes
+
+* **manifest:** add plugins.json to a bundle ([22c1a28db3a189d06a354c621e5b24c6df94f38c](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/22c1a28db3a189d06a354c621e5b24c6df94f38c))
+
 # [1.2.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.1.10...v1.2.0) (2019-10-04)
 
 

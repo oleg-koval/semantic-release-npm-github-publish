@@ -13,8 +13,8 @@
     "semantic-release": "^15.13.24"
   },
   "files": [
-		"release.config.js",
-		"plugins.json"
+    "release.config.js",
+    "plugins.json"
   ],
   "keywords": [
     "changelog",
@@ -48,5 +48,5 @@
   "scripts": {
     "semantic-release": "semantic-release"
   },
-  "version": "1.2.0"
+  "version": "1.2.1"
 }

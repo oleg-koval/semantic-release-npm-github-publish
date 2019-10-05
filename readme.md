@@ -30,7 +30,7 @@
   - **MAJOR** version created if **feat** commit type pushed
 - Publishes the new version to [NPM](https://npmjs.org).
 - Bumps a version in package.json.
-- Creates or updates a changelog file].
+- Generates or updates a [changelog](https://github.com/semantic-release/changelog) file including all **PATCH** keywords (not included in default angular package).
 - Releases new release for NPM & Github.
 
 **This repository can be also used as a [template repository](https://help.github.com/en/articles/creating-a-template-repository) for creation of sharable semantic-release configurations.**

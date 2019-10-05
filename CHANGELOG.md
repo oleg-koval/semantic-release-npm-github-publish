@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.2.1...v1.3.0) (2019-10-05)
+
+
+### Features
+
+* **type:** add chore type ([3aaa92d076da1aa4a1a8c6b177c50a338ae6466e](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/3aaa92d076da1aa4a1a8c6b177c50a338ae6466e))
+
 ## [1.2.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.2.0...v1.2.1) (2019-10-04)
 
 

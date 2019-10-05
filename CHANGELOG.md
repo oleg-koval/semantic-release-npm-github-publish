@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.3.0...v1.3.1) (2019-10-05)
+
+
+### Documentation
+
+* **readme:** update descriptions, fix links ([7a54dcc529c107eda3388089e649254c494b9017](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/7a54dcc529c107eda3388089e649254c494b9017))
+
 # [1.3.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.2.1...v1.3.0) (2019-10-05)
 
 

@@ -22,11 +22,16 @@
 
 ## About
 
-- Using [@semantic-release/commit-analyzer](https://github.com/semantic-release/commit-analyzer) ensures that commits are conformed to the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.4/). For any of these keywords: **build, ci, chore, docs, refactor, style, test** - patch version will be created.
+> This [sharable configuration](https://github.com/semantic-release/semantic-release/blob/master/docs/extending/shareable-configurations-list.md) conforms to [angular standard](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular)
+
+- Using [@semantic-release/commit-analyzer](https://github.com/semantic-release/commit-analyzer) ensures that commits are conformed to the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.4/).
+  - **PATCH** version created if any of **build, ci, chore, docs, refactor, style, test** commit types pushed to master
+  - **MINOR** version created if **fix** commit type pushed
+  - **MAJOR** version created if **feat** commit type pushed
 - Publishes the new version to [NPM](https://npmjs.org).
 - Bumps a version in package.json.
-- Creates or updates a changelog file.
-- Releases new release for Github.
+- Creates or updates a changelog file].
+- Releases new release for NPM & Github.
 
 **This repository can be also used as a [template repository](https://help.github.com/en/articles/creating-a-template-repository) for creation of sharable semantic-release configurations.**
 
@@ -50,7 +55,7 @@ To use this sharable config, extend your semantic release configuration:
 
 ## Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/oleg-koval/semantic-release-npm-github-publi/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues).
 
 ## Build with
 

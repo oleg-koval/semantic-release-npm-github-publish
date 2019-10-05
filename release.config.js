@@ -34,6 +34,8 @@ customTransform = (commit, context) => {
 		commit.type = `Build System`;
 	} else if (commit.type === `ci`) {
 		commit.type = `Continuous Integration`;
+	} else if (commit.type === `chore`) {
+		commit.type = `Chores`;
 	} else {
 		return;
 	}

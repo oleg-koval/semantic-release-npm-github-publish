@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.3.1...v1.3.2) (2019-10-05)
+
+
+### Documentation
+
+* **description:** update descriptions in package.json ([3521a76f84c61734a9172d1ca8032214b73cd54b](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/3521a76f84c61734a9172d1ca8032214b73cd54b))
+
 ## [1.3.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.3.0...v1.3.1) (2019-10-05)
 
 

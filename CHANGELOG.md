@@ -1,3 +1,10 @@
+## [1.3.4](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.3.3...v1.3.4) (2019-10-09)
+
+
+### Bug Fixes
+
+* package.json & package-lock.json to reduce vulnerabilities ([b6c8ad193f17679d4307da4c63b0026b71ea6c91](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/b6c8ad193f17679d4307da4c63b0026b71ea6c91))
+
 ## [1.3.3](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.3.2...v1.3.3) (2019-10-05)
 
 

@@ -1,3 +1,10 @@
+## [1.3.5](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.3.4...v1.3.5) (2019-11-03)
+
+
+### Code Refactoring
+
+* use object literal to transform commit type ([3b7ff9a](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/3b7ff9a6109de590a07392a70ac63880aad73a10))
+
 ## [1.3.4](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.3.3...v1.3.4) (2019-10-09)
 
 

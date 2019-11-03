@@ -37,9 +37,29 @@
 
 ## Install
 
+- Install `semantic-release`:
+
+```sh
+npm install --save-dev semantic-release
+```
+
+- Add `semantic-release` to scripts:
+
+```json
+"scripts": {
+	...
+	"semantic-release": "semantic-release"
+	...
+}
+```
+
+- Install `semantic-release-npm-github-publish`:
+
 ```sh
 npm install --save-dev semantic-release-npm-github-publish
 ```
+
+- Add `npx semantic-release` to a "Release" step of your CD setup
 
 ## Usage
 

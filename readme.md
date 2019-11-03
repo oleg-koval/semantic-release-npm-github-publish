@@ -43,14 +43,14 @@ npm install --save-dev semantic-release-npm-github-publish
 
 ## Usage
 
-To use this sharable config, extend your semantic release configuration:
+To use this sharable config, extend your semantic release configuration in `.releaserc.yaml`:
 
-```json
-{
-  "extends": "semantic-release-npm-github-publish",
-  "branch": "master",
-  "debug": false
-}
+```yaml
+branch: master
+ci: false
+dryRun: false
+debug: false
+extends: "semantic-release-npm-github-publish"
 ```
 
 ## Contributing

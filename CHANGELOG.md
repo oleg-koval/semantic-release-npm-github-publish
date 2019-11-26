@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.3.7...v1.4.0) (2019-11-26)
+
+
+### Features
+
+* backwards compatibility for commits without keyword ([90deac9](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/90deac91d67dcbed0883f8619dd70b1927a37c88))
+
 ## [1.3.7](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.3.6...v1.3.7) (2019-11-03)
 
 

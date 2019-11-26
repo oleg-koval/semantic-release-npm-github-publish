@@ -13,9 +13,7 @@ const transformCommitType = type => {
 		build: "Build System",
 		ci: "Continuous Integration",
 		chore: "Chores",
-		default: () => {
-			return;
-		}
+		default: "Miscellaneous"
 	};
 	return commitTypeMapping[type] || commitTypeMapping["default"];
 };

@@ -6,7 +6,8 @@
     "@semantic-release/git": "^7.0.16",
     "@semantic-release/github": "^5.5.1",
     "@semantic-release/npm": "^5.1.15",
-    "@semantic-release/release-notes-generator": "^7.3.0"
+    "@semantic-release/release-notes-generator": "^7.3.0",
+    "snyk": "^1.316.1"
   },
   "description": "[Github template] Sharable configuration for semantic-release, extends experience for publishing to NPM & Github: generates release-notes, changelog, publishes new version with Github actions.",
   "devDependencies": {
@@ -46,7 +47,10 @@
     "url": "https://github.com/oleg-koval/semantic-release-npm-github-publish.git"
   },
   "scripts": {
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
-  "version": "1.4.0"
+  "version": "1.4.0",
+  "snyk": true
 }

@@ -16,7 +16,7 @@ jobs:
           node-version: 12
       - env:
           CI: true
-        run: npm ci
+        run: yarn install
       - if: success()
         env:
           CI: true

@@ -15,7 +15,7 @@ jobs:
       -
         env:
           CI: true
-        run: "npm ci"
+        run: "yarn install"
       -
         env:
           CI: true

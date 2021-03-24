@@ -1,19 +1,19 @@
 # semantic-release-npm-github-publish
 
 <p>
-  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions" target="_blank">
-    <img alt="Version" src="https://github.com/oleg-koval/semantic-release-npm-github-publish/workflows/Publish/badge.svg?branch=master">
+  <a href="https://github.com/TMWare/semantic-release-npm-github-publish/actions" target="_blank">
+    <img alt="Version" src="https://github.com/TMWare/semantic-release-npm-github-publish/workflows/Publish/badge.svg?branch=master">
   </a>
-  <a href="https://www.npmjs.com/package/semantic-release-npm-github-publish" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/semantic-release-npm-github-publish.svg">
+  <a href="https://www.npmjs.com/package/@tmware/semantic-release-npm-github-publish" target="_blank">
+    <img alt="Version" src="https://img.shields.io/npm/v/tmware/semantic-release-npm-github-publish.svg">
   </a>
-  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish#readme" target="_blank">
+  <a href="https://github.com/TMWare/semantic-release-npm-github-publish#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/graphs/commit-activity" target="_blank">
+  <a href="https://github.com/TMWare/semantic-release-npm-github-publish/graphs/commit-activity" target="_blank">
     <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
   </a>
-  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/TMWare/semantic-release-npm-github-publish/blob/master/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
 </p>
@@ -75,7 +75,7 @@ extends: "semantic-release-npm-github-publish"
 
 ## Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues).
+Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/TMWare/semantic-release-npm-github-publish/issues).
 
 ## Build with
 

@@ -1,3 +1,25 @@
+## [1.4.1](https://github.com/TMWare/semantic-release-npm-github-publish/compare/v1.4.0...v1.4.1) (2021-03-24)
+
+
+### Chores
+
+* **merge:** merge pull request [#3](https://github.com/TMWare/semantic-release-npm-github-publish/issues/3) from TMWare/dev ([1509857](https://github.com/TMWare/semantic-release-npm-github-publish/commit/1509857bfb1aa742aab7acea572740e3859c4234))
+* move things around in package.json ([2100da5](https://github.com/TMWare/semantic-release-npm-github-publish/commit/2100da5855cf257ab9b2af16ea3428118b1681cd))
+* **deps:** update dependencies; use yarn ([6f07219](https://github.com/TMWare/semantic-release-npm-github-publish/commit/6f0721911f50d19f85d2ce703c3a386f9c2a489e))
+* **merge:** automerge 1 ([ef9b743](https://github.com/TMWare/semantic-release-npm-github-publish/commit/ef9b74367523c36b98eccdcb6fed945f08e18bf4))
+* **merge:** automerge PR [#2](https://github.com/TMWare/semantic-release-npm-github-publish/issues/2) ([9f6824c](https://github.com/TMWare/semantic-release-npm-github-publish/commit/9f6824c23d25d2be1855fb91a5e38faa6e2f92ad))
+
+
+### Continuous Integration
+
+* **automerge:** update merge commit message ([4a4be56](https://github.com/TMWare/semantic-release-npm-github-publish/commit/4a4be56e11990014b68ec873a72aa9bf90ca877b))
+* **pr:** create automerge.yml ([ce90b8e](https://github.com/TMWare/semantic-release-npm-github-publish/commit/ce90b8e3df174bddc75d45d26c4f581deb7f9d30))
+
+
+### Documentation
+
+* **readme:** fix typo in shields ([51b22e2](https://github.com/TMWare/semantic-release-npm-github-publish/commit/51b22e2dc7cc6ebd154ebcf999563dcf47b44763))
+
 # [1.4.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.3.7...v1.4.0) (2019-11-26)
 
 

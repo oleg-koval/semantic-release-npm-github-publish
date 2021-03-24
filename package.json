@@ -1,6 +1,6 @@
 {
   "name": "@tmware/semantic-release-npm-github-publish",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "main": "release.config.js",
   "author": "Oleg Koval <kvl.olg@gmail.com>",
   "dependencies": {

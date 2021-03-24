@@ -5,7 +5,7 @@
     <img alt="Version" src="https://github.com/TMWare/semantic-release-npm-github-publish/workflows/Publish/badge.svg?branch=master">
   </a>
   <a href="https://www.npmjs.com/package/@tmware/semantic-release-npm-github-publish" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/@tmware/semantic-release-npm-github-publish.svg">
+    <img alt="Version" src="https://img.shields.io/npm/v/tmware/semantic-release-npm-github-publish.svg">
   </a>
   <a href="https://github.com/TMWare/semantic-release-npm-github-publish#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />

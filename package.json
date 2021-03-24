@@ -1,4 +1,7 @@
 {
+  "name": "@tmware/semantic-release-npm-github-publish",
+  "version": "1.4.0",
+  "main": "release.config.js",
   "author": "Oleg Koval <kvl.olg@gmail.com>",
   "dependencies": {
     "@semantic-release/changelog": "^5.0.1",
@@ -33,8 +36,6 @@
     "release.config.js"
   ],
   "license": "MIT",
-  "main": "release.config.js",
-  "name": "semantic-release-npm-github-publish",
   "peerDependencies": {
     "semantic-release": ">=15.13.24"
   },
@@ -47,6 +48,5 @@
   },
   "scripts": {
     "semantic-release": "semantic-release"
-  },
-  "version": "1.4.0"
+  }
 }

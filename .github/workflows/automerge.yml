@@ -27,7 +27,7 @@ jobs:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           MERGE_LABELS: "automerge,!wip"
           MERGE_REMOVE_LABELS: "automerge"
-          MERGE_COMMIT_MESSAGE: "chore(merge): automerge {pullRequest.number}"
+          MERGE_COMMIT_MESSAGE: "chore(merge): automerge PR #{pullRequest.number}"
           MERGE_FORKS: "false"
           MERGE_RETRIES: "3"
           MERGE_RETRY_SLEEP: "10000"

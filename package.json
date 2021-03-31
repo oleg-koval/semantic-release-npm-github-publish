@@ -5,7 +5,7 @@
     "@semantic-release/commit-analyzer": "^6.3.0",
     "@semantic-release/git": "^7.0.16",
     "@semantic-release/github": "^5.5.1",
-    "@semantic-release/npm": "^5.1.15",
+    "@semantic-release/npm": "^7.1.0",
     "@semantic-release/release-notes-generator": "^7.3.0"
   },
   "description": "[Github template] Sharable configuration for semantic-release, extends experience for publishing to NPM & Github: generates release-notes, changelog, publishes new version with Github actions.",

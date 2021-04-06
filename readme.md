@@ -56,7 +56,7 @@ npm install --save-dev semantic-release
 - Install `semantic-release-npm-github-publish`:
 
 ```sh
-npm install --save-dev semantic-release-npm-github-publish
+npm install --save-dev @tmware/semantic-release-npm-github-publish
 ```
 
 - Add `npx semantic-release` to a "Release" step of your CD setup
@@ -70,7 +70,7 @@ branch: master
 ci: false
 dryRun: false
 debug: false
-extends: "semantic-release-npm-github-publish"
+extends: "@tmware/semantic-release-npm-github-publish"
 ```
 
 ## Contributing

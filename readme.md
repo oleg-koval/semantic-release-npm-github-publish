@@ -47,9 +47,7 @@ npm install --save-dev semantic-release
 
 ```json
 "scripts": {
-	...
 	"semantic-release": "semantic-release"
-	...
 }
 ```
 

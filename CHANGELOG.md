@@ -1,3 +1,15 @@
+## [1.4.3](https://github.com/TMWare/semantic-release-npm-github-publish/compare/v1.4.2...v1.4.3) (2021-04-30)
+
+
+### Chores
+
+* **deps:** upgrade all dependencies ([844a994](https://github.com/TMWare/semantic-release-npm-github-publish/commit/844a9943e34b9b8132c64151d0756a6ef21b1cec))
+
+
+### Continuous Integration
+
+* **dependabot:** use dependabot ([920aac5](https://github.com/TMWare/semantic-release-npm-github-publish/commit/920aac5b412aeccb657700a6b2403b0a9fdb125c))
+
 ## [1.4.2](https://github.com/TMWare/semantic-release-npm-github-publish/compare/v1.4.1...v1.4.2) (2021-04-06)
 
 

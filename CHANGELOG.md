@@ -1,3 +1,29 @@
+## [1.4.4](https://github.com/TMWare/semantic-release-npm-github-publish/compare/v1.4.3...v1.4.4) (2021-07-10)
+
+
+### Bug Fixes
+
+* **deps:** bump @semantic-release/github from 7.2.0 to 7.2.3 ([#11](https://github.com/TMWare/semantic-release-npm-github-publish/issues/11)) ([19d63d9](https://github.com/TMWare/semantic-release-npm-github-publish/commit/19d63d9ca37d82195fca8af7263cdf8839a9e6e0))
+* **deps:** bump @semantic-release/npm from 7.0.10 to 7.1.3 ([#9](https://github.com/TMWare/semantic-release-npm-github-publish/issues/9)) ([c8577ee](https://github.com/TMWare/semantic-release-npm-github-publish/commit/c8577eefcb694bb74f97577e1a424025a406a991))
+* **deps:** bump @semantic-release/release-notes-generator from 9.0.2 to 9.0.3 ([#17](https://github.com/TMWare/semantic-release-npm-github-publish/issues/17)) ([483b7cb](https://github.com/TMWare/semantic-release-npm-github-publish/commit/483b7cbc363da713e92a8fdd70ba9fcac57ea69a))
+
+
+### Chores
+
+* **deps:** bump actions/checkout from 1 to 2.3.4 ([#13](https://github.com/TMWare/semantic-release-npm-github-publish/issues/13)) ([c5b7eb4](https://github.com/TMWare/semantic-release-npm-github-publish/commit/c5b7eb4299640d1b30037c613503f11aeaa8694c))
+* **deps:** bump actions/setup-node from 1 to 2.2.0 ([#19](https://github.com/TMWare/semantic-release-npm-github-publish/issues/19)) ([0e17b29](https://github.com/TMWare/semantic-release-npm-github-publish/commit/0e17b299df25200988e0fc4f8b6ba2580ac1a664))
+* **deps:** bump pascalgn/automerge-action from 0.13.1 to 0.14.1 ([#15](https://github.com/TMWare/semantic-release-npm-github-publish/issues/15)) ([37ccc68](https://github.com/TMWare/semantic-release-npm-github-publish/commit/37ccc6863a15654d19fa7052cf375efed8d3369d))
+* **deps:** bump pascalgn/automerge-action from 0.14.1 to 0.14.2 ([#16](https://github.com/TMWare/semantic-release-npm-github-publish/issues/16)) ([e89dc12](https://github.com/TMWare/semantic-release-npm-github-publish/commit/e89dc124aad56ef920e23fb505ec3e971962e82b))
+* **deps:** upgrade all dependencies ([e6e81a6](https://github.com/TMWare/semantic-release-npm-github-publish/commit/e6e81a6842361b9766c64850d603f271d8ccefe7))
+* **deps-dev:** bump semantic-release from 17.4.2 to 17.4.3 ([#12](https://github.com/TMWare/semantic-release-npm-github-publish/issues/12)) ([52821b6](https://github.com/TMWare/semantic-release-npm-github-publish/commit/52821b608cb3edf06073a32cb2951e88003f77d0))
+* **deps-dev:** bump semantic-release from 17.4.3 to 17.4.4 ([#18](https://github.com/TMWare/semantic-release-npm-github-publish/issues/18)) ([e43fa0a](https://github.com/TMWare/semantic-release-npm-github-publish/commit/e43fa0a4324247343f94850e6571a341b6a17018))
+* **merge:** merge dependency updates ([#20](https://github.com/TMWare/semantic-release-npm-github-publish/issues/20)) ([7e0ff3d](https://github.com/TMWare/semantic-release-npm-github-publish/commit/7e0ff3d03464cf68038dd2c4ceee675094a0412a))
+
+
+### Miscellaneous
+
+* Merge branch 'master' into dev ([3f7ea4c](https://github.com/TMWare/semantic-release-npm-github-publish/commit/3f7ea4c09bca7ce93969850f09c060a8a41928ea))
+
 ## [1.4.3](https://github.com/TMWare/semantic-release-npm-github-publish/compare/v1.4.2...v1.4.3) (2021-04-30)
 
 

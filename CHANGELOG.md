@@ -1,3 +1,28 @@
+## [1.4.3](https://github.com/TMWare/semantic-release-npm-github-publish/compare/v1.4.2...v1.4.3) (2021-04-30)
+
+
+### Chores
+
+* **deps:** upgrade all dependencies ([844a994](https://github.com/TMWare/semantic-release-npm-github-publish/commit/844a9943e34b9b8132c64151d0756a6ef21b1cec))
+
+
+### Continuous Integration
+
+* **dependabot:** use dependabot ([920aac5](https://github.com/TMWare/semantic-release-npm-github-publish/commit/920aac5b412aeccb657700a6b2403b0a9fdb125c))
+
+## [1.4.2](https://github.com/TMWare/semantic-release-npm-github-publish/compare/v1.4.1...v1.4.2) (2021-04-06)
+
+
+### Chores
+
+* **merge:** automerge PR [#4](https://github.com/TMWare/semantic-release-npm-github-publish/issues/4) ([b90d9b2](https://github.com/TMWare/semantic-release-npm-github-publish/commit/b90d9b25710d4882faf06e4989344b84b72eac23))
+
+
+### Documentation
+
+* **readme:** fix npm version shield ([44a9adf](https://github.com/TMWare/semantic-release-npm-github-publish/commit/44a9adf81f6e382b1699c9bce76ba3ee2c0b7d9b))
+* **readme:** update readme.md ([3e05175](https://github.com/TMWare/semantic-release-npm-github-publish/commit/3e05175838347c8c9ace370ee3e18136b6f872dd))
+
 ## [1.4.1](https://github.com/TMWare/semantic-release-npm-github-publish/compare/v1.4.0...v1.4.1) (2021-03-24)
 
 

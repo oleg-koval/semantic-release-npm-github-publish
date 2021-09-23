@@ -32,7 +32,6 @@ const customTransform = (commit, context) => {
 	}
 
 	if (typeof commit.hash === `string`) {
-		console.log("commit", commit.hash);
 		commit.shortHash = commit.hash.substring(0, 7);
 	}
 
@@ -64,15 +63,13 @@ const customTransform = (commit, context) => {
 	}
 
 	// remove references that already appear in the subject
-	console.log("🚀 ~ file: release.config.js ~ line 74 ~ customTransform ~ commit.references", commit.references)
-	commit.references = commit.references.filter(reference => {
-		if (issues.indexOf(reference.issue) === -1) {
-			return true;
-		}
+	// commit.references = commit.references.filter(reference => {
+	// 	if (issues.indexOf(reference.issue) === -1) {
+	// 		return true;
+	// 	}
 
-		return false;
-	});
-	console.log("🚀 ~ file: release.config.js ~ line 75 ~ customTransform ~ commit.references", commit.references)
+	// 	return false;
+	// });
 	return commit;
 };
 

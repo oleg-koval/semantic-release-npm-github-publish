@@ -62,16 +62,16 @@ const customTransform = (commit, context) => {
 		}
 	}
 
-	console.log(commit.references)
 
 	// remove references that already appear in the subject
-	// commit.references = commit.references.filter(reference => {
-	// 	if (issues.indexOf(reference.issue) === -1) {
-	// 		return true;
-	// 	}
+	commit.references = commit.references.filter(reference => {
+		if (issues.indexOf(reference.issue) === -1) {
+			return true;
+		}
 
-	// 	return false;
-	// });
+		return false;
+	});
+	console.log(commit.references)
 	return commit;
 };
 

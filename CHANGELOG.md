@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.5.0...v1.5.1) (2021-09-23)
+
+
+### chore
+
+* add code scanning ([#31](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/31)) ([1d956cb](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/1d956cbaf75677d9a869e33de4cf50f0304ff1b3))
+
 # [1.5.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.4.0...v1.5.0) (2021-09-23)
 
 

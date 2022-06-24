@@ -7,14 +7,15 @@
     "@semantic-release/changelog": "^6.0.1",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/git": "^10.0.1",
-    "@semantic-release/github": "^8.0.2",
-    "@semantic-release/npm": "^8.0.3",
+    "@semantic-release/github": "^8.0.4",
+    "@semantic-release/npm": "^9.0.1",
     "@semantic-release/release-notes-generator": "^10.0.3",
-    "semantic-release": "^18.0.1",
-    "snyk": "^1.794.0"
+    "semantic-release": "^19.0.3"
   },
   "description": "Sharable configuration for semantic-release, extends experience for publishing to NPM & Github: generates release-notes, changelog, publishes new version with Github actions.",
-  "devDependencies": {},
+  "devDependencies": {
+    "@snyk/protect": "^1.958.0"
+  },
   "files": [
     "types.js",
     "commit-transform.js",
@@ -39,7 +40,7 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "semantic-release": ">=18.0.0"
+    "semantic-release": ">=19.0.0"
   },
   "publishConfig": {
     "access": "public"
@@ -50,7 +51,7 @@
   },
   "scripts": {
     "semantic-release": "semantic-release",
-    "snyk-protect": "snyk protect",
+    "snyk-protect": "snyk-protect",
     "prepare": "yarn run snyk-protect"
   },
   "snyk": true

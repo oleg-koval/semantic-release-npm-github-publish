@@ -1,3 +1,10 @@
+## [1.5.3](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.5.2...v1.5.3) (2022-08-19)
+
+
+### chore
+
+* **deps:** bump minimist from 1.2.5 to 1.2.6 ([#36](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/36)) ([8387054](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/83870549f672af9a299c5dcca693245d130e3fa6))
+
 ## [1.5.2](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.5.1...v1.5.2) (2022-08-19)
 
 

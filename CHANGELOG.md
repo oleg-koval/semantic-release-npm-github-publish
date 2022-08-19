@@ -1,3 +1,10 @@
+## [1.5.2](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.5.1...v1.5.2) (2022-08-19)
+
+
+### fix
+
+* package.json & package-lock.json to reduce vulnerabilities ([#35](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/35)) ([e678692](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/e6786923b6b1cf54798284dff083cab668e9ccb5))
+
 ## [1.5.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.5.0...v1.5.1) (2021-09-23)
 
 

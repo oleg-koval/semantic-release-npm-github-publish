@@ -1,3 +1,11 @@
+## [1.5.4](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.5.3...v1.5.4) (2022-08-19)
+
+
+### chore
+
+* **deps:** bump node-fetch from 2.6.5 to 2.6.7 ([#37](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/37)) ([153934b](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/153934b569d246880e16a6707c19ea63beaddc77))
+* **deps:** bump semver-regex from 3.1.3 to 3.1.4 ([#38](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/38)) ([78ae149](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/78ae14931d5314264afe7eaebb6fbc5ce7dc567c))
+
 ## [1.5.3](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.5.2...v1.5.3) (2022-08-19)
 
 

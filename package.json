@@ -8,7 +8,7 @@
     "@semantic-release/npm": "^8.0.0",
     "@semantic-release/release-notes-generator": "^10.0.2",
     "semantic-release": "^19.0.0",
-    "snyk": "^1.720.0"
+    "snyk": "^1.996.0"
   },
   "description": "Sharable configuration for semantic-release, extends experience for publishing to NPM & Github: generates release-notes, changelog, publishes new version with Github actions.",
   "devDependencies": {},

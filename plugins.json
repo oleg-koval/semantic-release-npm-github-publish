@@ -1,5 +1,6 @@
 [
 	[
+		
 		"@semantic-release/commit-analyzer",
 		{
 			"releaseRules": [
@@ -44,5 +45,6 @@
 			"message": "release(version): Release ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
 		}
 	],
+	
 	"@semantic-release/github"
 ]

@@ -1,3 +1,15 @@
+## [1.5.5](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.5.4...v1.5.5) (2023-12-22)
+
+
+### chore
+
+* **deps:** Update and reconfigure needed packages ([#46](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/46)) ([e25e6e7](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/e25e6e7a84795726741c099ff954a3619811ca89))
+
+
+### ci
+
+* update release workflows to node version 18 ([#52](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/52)) ([dc4f4b8](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/dc4f4b85ec7f8a5bd82dc905e3bfab8c3ed67b34))
+
 ## [1.5.4](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.5.3...v1.5.4) (2022-08-19)
 
 

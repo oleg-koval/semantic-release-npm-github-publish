@@ -50,6 +50,6 @@
     "snyk-protect": "snyk-protect",
     "prepare": "npm run snyk-protect"
   },
-  "version": "1.5.4",
+  "version": "1.5.5",
   "snyk": true
 }

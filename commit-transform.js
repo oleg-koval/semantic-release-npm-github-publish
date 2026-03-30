@@ -22,6 +22,7 @@ module.exports = (commit, context) => {
 		commit.groupType = `${types.types[commit.type].emoji ? `${types.types[commit.type].emoji} ` : ''}${
 			types.types[commit.type].title
 		}`;
+		commit.type = commit.groupType;
 	} else {
 		return null;
 	}

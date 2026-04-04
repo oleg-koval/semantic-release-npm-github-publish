@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.6.0...v1.7.0) (2026-04-04)
+
+
+### ✨ Features
+
+* **release:** add beta channel and docs automation ([f1ab1fd](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/f1ab1fd55f36dc27309995294917579d37de8eee))
+
 # [1.6.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.5.5...v1.6.0) (2026-04-04)
 
 

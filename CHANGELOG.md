@@ -1,3 +1,10 @@
+## [1.7.3](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.2...v1.7.3) (2026-04-04)
+
+
+### 🐛 Bug Fixes
+
+* **ci:** run lockfile fixer for reopened dependabot prs ([cea37bf](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/cea37bf6ce4284c3712eed161cc4005e726149c6))
+
 ## [1.7.2](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.1...v1.7.2) (2026-04-04)
 
 

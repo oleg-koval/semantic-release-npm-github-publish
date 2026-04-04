@@ -116,9 +116,8 @@ Use repo-local plugin composition instead when your team wants different plugins
 ## Repository Maintenance Notes
 
 - Consumer-facing examples now use `main`.
-- Repository automation currently supports both `master` and `main` so maintenance is not blocked before the branch rename.
-- Repository automation also supports `beta` for prerelease validation and publishing.
-- Renaming this repository's default branch to `main` is still recommended to align hosted defaults, badges, and examples.
+- Repository automation publishes stable releases from `main` and prereleases from `beta`.
+- Dependabot PRs can auto-refresh `package-lock.json` through the dedicated lockfile-fixer workflow.
 - The old README wording that inverted `fix` and `feat` was documentation drift. The actual release behavior has been corrected and is now covered by tests.
 
 ## Contributing

@@ -124,6 +124,7 @@ Use repo-local plugin composition instead when your team wants different plugins
 - Consumer-facing examples now use `main`.
 - Repository automation publishes stable releases from `main` and prereleases from `beta`.
 - The repository default branch is `main`, and all badges and examples now follow that.
+- Dependabot PRs can auto-refresh `package-lock.json` through the dedicated lockfile-fixer workflow.
 - The old README wording that inverted `fix` and `feat` was documentation drift. The actual release behavior has been corrected and is now covered by tests.
 
 ## Contributing

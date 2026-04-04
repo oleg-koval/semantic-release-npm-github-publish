@@ -47,7 +47,6 @@ test('exports the documented plugin chain', () => {
 test('keeps beta prereleases as a repo-only branch policy', () => {
 	assert.equal(releaseConfig.branches, undefined);
 	assert.deepEqual(repoReleaseConfig.branches, [
-		{name: 'master', channel: 'latest'},
 		{name: 'main', channel: 'latest'},
 		{name: 'beta', prerelease: 'beta'},
 	]);

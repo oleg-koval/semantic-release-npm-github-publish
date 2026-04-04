@@ -1,3 +1,10 @@
+## [1.7.2](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.1...v1.7.2) (2026-04-04)
+
+
+### 📚 Documentation
+
+* **readme:** refresh badges and branch guidance ([#58](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/58)) ([5b82595](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/5b825957cf7d6df85984c746775b80204c925416))
+
 ## [1.7.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.0...v1.7.1) (2026-04-04)
 
 

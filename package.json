@@ -59,7 +59,7 @@
   "scripts": {
     "docs:index:check": "docs-index-keeper check",
     "docs:index:update": "docs-index-keeper update",
-    "release:dry-run": "semantic-release --dry-run --debug --extends ./release.repo.config.js",
+    "release:dry-run": "node ./scripts/release-dry-run.mjs",
     "test": "node --test",
     "test:config": "node -e \"const config = require('./release.config.js'); if (!Array.isArray(config.plugins) || config.plugins.length === 0) { throw new Error('release config did not load plugins'); }\"",
     "semantic-release": "semantic-release --extends ./release.repo.config.js",
@@ -69,6 +69,6 @@
   "docsIndexKeeper": {
     "indexFile": "docs/README.md"
   },
-  "version": "1.5.5",
+  "version": "1.6.0",
   "snyk": true
 }

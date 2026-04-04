@@ -6,6 +6,7 @@ const test = require('node:test');
 const {analyzeCommits} = require('@semantic-release/commit-analyzer');
 
 const transformCommit = require('../commit-transform');
+const dryRunReleaseConfig = require('../release.dry-run.config');
 const releaseConfig = require('../release.config');
 const repoReleaseConfig = require('../release.repo.config');
 
@@ -52,6 +53,16 @@ test('keeps beta prereleases as a repo-only branch policy', () => {
 	]);
 });
 
+test('uses auth-free plugins for release dry runs', () => {
+	assert.deepEqual(
+		dryRunReleaseConfig.plugins.map(plugin => Array.isArray(plugin) ? plugin[0] : plugin),
+		[
+			'@semantic-release/commit-analyzer',
+			'@semantic-release/release-notes-generator',
+		]
+	);
+});
+
 test('keeps standard feat/fix and breaking-change semantics', async () => {
 	assert.equal(await analyzeReleaseType(['fix: correct output']), 'patch');
 	assert.equal(await analyzeReleaseType(['feat: add publish summary']), 'minor');
@@ -89,6 +100,28 @@ test('formats changelog commit groups with curated titles', () => {
 		transformed.subject,
 		/\[#42\]\(https:\/\/github\.com\/oleg-koval\/semantic-release-npm-github-publish\/issues\/42\)/
 	);
+});
+
+test('transforms immutable commit objects without mutating input', () => {
+	const immutableCommit = Object.freeze({
+		hash: '1234567890abcdef',
+		notes: Object.freeze([Object.freeze({text: 'breaking'})]),
+		references: Object.freeze([Object.freeze({issue: '42'})]),
+		scope: '*',
+		subject: 'add summary for #42',
+		type: 'feat',
+	});
+
+	const transformed = transformCommit(immutableCommit, {
+		host: 'https://github.com',
+		owner: 'oleg-koval',
+		repository: 'semantic-release-npm-github-publish',
+	});
+
+	assert.equal(transformed.scope, '');
+	assert.equal(transformed.notes[0].title, 'Breaking changes');
+	assert.equal(immutableCommit.notes[0].title, undefined);
+	assert.equal(transformed.references.length, 0);
 });
 
 test('drops unknown commit types from the changelog', () => {

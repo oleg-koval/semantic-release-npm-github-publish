@@ -1,0 +1,45 @@
+name: Dependabot Lockfile Fixer
+
+on:
+  pull_request_target:
+    types:
+      - opened
+      - reopened
+      - synchronize
+      - ready_for_review
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: dependabot-lockfile-fixer-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  fix-lockfiles:
+    if: >
+      github.event.pull_request.user.login == 'dependabot[bot]' &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Fix lockfiles
+        uses: oleg-koval/dependabot-lockfile-fixer@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          package_manager: npm
+          working_directory: .

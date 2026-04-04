@@ -1,3 +1,24 @@
+## [1.7.3](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.2...v1.7.3) (2026-04-04)
+
+
+### 🐛 Bug Fixes
+
+* **ci:** run lockfile fixer for reopened dependabot prs ([cea37bf](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/cea37bf6ce4284c3712eed161cc4005e726149c6))
+
+## [1.7.2](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.1...v1.7.2) (2026-04-04)
+
+
+### 📚 Documentation
+
+* **readme:** refresh badges and branch guidance ([#58](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/58)) ([5b82595](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/5b825957cf7d6df85984c746775b80204c925416))
+
+## [1.7.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.0...v1.7.1) (2026-04-04)
+
+
+### ⚙️ Continuous Integrations
+
+* **dependabot:** add lockfile fixer workflow ([#59](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/59)) ([287745b](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/287745bbd3adb0581a3b04c5abf0f7509bbf5fc4))
+
 # [1.7.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.6.0...v1.7.0) (2026-04-04)
 
 

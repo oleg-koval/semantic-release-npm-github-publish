@@ -1,14 +1,20 @@
 # semantic-release-npm-github-publish
 
-<p>
+<p align="center">
   <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/ci.yml" target="_blank">
     <img alt="CI" src="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/ci.yml/badge.svg?branch=main">
   </a>
   <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/release.yml" target="_blank">
     <img alt="Publish" src="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/release.yml/badge.svg?branch=main">
   </a>
+  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/codeql-analysis.yml" target="_blank">
+    <img alt="CodeQL" src="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/codeql-analysis.yml/badge.svg?branch=main">
+  </a>
   <a href="https://www.npmjs.com/package/semantic-release-npm-github-publish" target="_blank">
     <img alt="npm" src="https://img.shields.io/npm/v/semantic-release-npm-github-publish.svg">
+  </a>
+  <a href="https://www.npmjs.com/package/semantic-release-npm-github-publish" target="_blank">
+    <img alt="npm downloads" src="https://img.shields.io/npm/dm/semantic-release-npm-github-publish.svg">
   </a>
   <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -89,6 +95,11 @@ For this repository itself, stable releases come from `main` and prereleases com
 
 ## Usage
 
+<p>
+  <strong style="color:#b91c1c;">Migration notice:</strong>
+  this preset does not hardcode consumer release branches. `main` is the documented default, but if your repository still releases from `master` or another branch, set `branches` explicitly in your repo-local semantic-release config.
+</p>
+
 Example `.releaserc.yaml`:
 
 ```yaml
@@ -101,6 +112,17 @@ debug: false
 ```
 
 If your repository releases from a different branch, set `branches` explicitly in your repo-local config.
+
+Example migration from `master`:
+
+```yaml
+branches:
+  - master
+extends: "semantic-release-npm-github-publish"
+ci: false
+dryRun: false
+debug: false
+```
 
 ## When To Use This Preset
 
@@ -116,9 +138,11 @@ Use repo-local plugin composition instead when your team wants different plugins
 ## Repository Maintenance Notes
 
 - Consumer-facing examples now use `main`.
-- Repository automation currently supports both `master` and `main` so maintenance is not blocked before the branch rename.
-- Repository automation also supports `beta` for prerelease validation and publishing.
-- Renaming this repository's default branch to `main` is still recommended to align hosted defaults, badges, and examples.
+- Repository automation publishes stable releases from `main` and prereleases from `beta`.
+- The repository default branch is `main`, and all badges and examples now follow that.
+- The shared preset does not hardcode release branches for consumers; set `branches` in your repo-local config when you do not release from `main`.
+- Dependabot PRs can auto-refresh `package-lock.json` through the dedicated lockfile-fixer workflow.
+- Dependabot npm patch updates can enable GitHub auto-merge after required checks pass.
 - The old README wording that inverted `fix` and `feat` was documentation drift. The actual release behavior has been corrected and is now covered by tests.
 
 ## Contributing

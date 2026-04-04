@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.0...v1.7.1) (2026-04-04)
+
+
+### ⚙️ Continuous Integrations
+
+* **dependabot:** add lockfile fixer workflow ([#59](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/59)) ([287745b](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/287745bbd3adb0581a3b04c5abf0f7509bbf5fc4))
+
 # [1.7.0](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.6.0...v1.7.0) (2026-04-04)
 
 

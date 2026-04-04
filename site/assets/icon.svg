@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="semantic-release npm github publish icon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f7a42"/>
+      <stop offset="100%" stop-color="#084726"/>
+    </linearGradient>
+  </defs>
+  <rect x="24" y="24" width="464" height="464" rx="116" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="136" fill="none" stroke="#d6f4e3" stroke-width="26"/>
+  <path d="M256 122v22m0 224v22M122 256h22m224 0h22" stroke="#d6f4e3" stroke-width="24" stroke-linecap="round"/>
+  <path d="M204 273l38 39 74-80" fill="none" stroke="#f2fff7" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="24" y="24" width="464" height="464" rx="116" fill="none" stroke="#e8fff1" stroke-opacity=".28" stroke-width="4"/>
+</svg>

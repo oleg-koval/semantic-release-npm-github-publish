@@ -1,85 +1,131 @@
 # semantic-release-npm-github-publish
 
 <p>
-  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions" target="_blank">
-    <img alt="Version" src="https://github.com/oleg-koval/semantic-release-npm-github-publish/workflows/Publish/badge.svg?branch=master">
+  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/ci.yml" target="_blank">
+    <img alt="CI" src="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/ci.yml/badge.svg?branch=main">
+  </a>
+  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/release.yml" target="_blank">
+    <img alt="Publish" src="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/release.yml/badge.svg?branch=main">
   </a>
   <a href="https://www.npmjs.com/package/semantic-release-npm-github-publish" target="_blank">
-    <img alt="Version" src="https://img.shields.io/npm/v/semantic-release-npm-github-publish.svg">
+    <img alt="npm" src="https://img.shields.io/npm/v/semantic-release-npm-github-publish.svg">
   </a>
-  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish#readme" target="_blank">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
-  </a>
-  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/graphs/commit-activity" target="_blank">
-    <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />
-  </a>
-  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/blob/master/LICENSE" target="_blank">
+  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
 </p>
 
-> Semantic-release shareable configuration for easy publishing to NPM, Github or Github Package Registry.
+> Opinionated `semantic-release` shareable configuration for npm + GitHub publishing with changelog generation and release commits.
 
 ## About
 
-> This [sharable configuration](https://github.com/semantic-release/semantic-release/blob/master/docs/extending/shareable-configurations-list.md) conforms to [angular standard](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular)
+This package is useful if you want one maintained preset instead of repeating the same `semantic-release` plugin composition in every repository.
 
-- Using [@semantic-release/commit-analyzer](https://github.com/semantic-release/commit-analyzer) ensures that commits are conformed to the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0-beta.4/).
-  - **PATCH** version created if any of **build, ci, chore, docs, refactor, style, test** commit types pushed to master
-  - **MINOR** version created if **fix** commit type pushed
-  - **MAJOR** version created if **feat** commit type pushed
-- Publishes the new version to [NPM](https://npmjs.org).
-- Bumps a version in package.json.
-- Generates or updates a [changelog](https://github.com/semantic-release/changelog) file including all **PATCH** keywords (not included in default angular package).
-- Releases new release for NPM & Github.
+It adds value beyond native plugin composition by shipping:
 
-**This repository can be also used as a [template repository](https://help.github.com/en/articles/creating-a-template-repository) for creation of sharable semantic-release configurations.**
+- extra patch release rules for `build`, `ci`, `chore`, `docs`, `refactor`, `style`, and `test`
+- curated changelog grouping, titles, and emojis via [`commit-transform.js`](./commit-transform.js) and [`types.js`](./types.js)
+- a fixed publish chain for npm + GitHub, including changelog updates and a release commit
+
+## Default Behavior
+
+The exported config uses this exact plugin chain:
+
+1. `@semantic-release/commit-analyzer`
+   with custom `releaseRules` for additional patch-triggering commit types
+2. `@semantic-release/release-notes-generator`
+3. `@semantic-release/changelog`
+4. `@semantic-release/npm`
+5. `@semantic-release/git`
+   commits `package.json`, `package-lock.json`, and `CHANGELOG.md`
+   with `release(version): Release ${nextRelease.version} [skip ci]`
+6. `@semantic-release/github`
+
+Release semantics match standard Conventional Commits and SemVer:
+
+- `fix` => patch
+- `feat` => minor
+- `BREAKING CHANGE` footer or `!` => major
+- `build`, `ci`, `chore`, `docs`, `refactor`, `style`, and `test` => patch in this preset
+
+## Compatibility
+
+This preset is actively maintained against the current stable `semantic-release` major.
+
+- tested with Node `22` and `24`
+- publish workflow runs on Node `24`
+- peer dependency ranges are pinned to the currently supported plugin majors
+- this repository also validates a `beta` prerelease branch with a repo-only release config
 
 ## Install
 
-- Install `semantic-release`:
+Install `semantic-release`, this preset, and the peer plugins it expects:
 
 ```sh
-npm install --save-dev semantic-release
+npm install --save-dev \
+  semantic-release \
+  semantic-release-npm-github-publish \
+  @semantic-release/changelog \
+  @semantic-release/commit-analyzer \
+  @semantic-release/git \
+  @semantic-release/github \
+  @semantic-release/npm \
+  @semantic-release/release-notes-generator
 ```
 
-- Add `semantic-release` to scripts:
+Add a release script:
 
 ```json
-"scripts": {
-	"semantic-release": "semantic-release"
+{
+  "scripts": {
+    "semantic-release": "semantic-release"
+  }
 }
 ```
 
-- Install `semantic-release-npm-github-publish`:
+Run `npx semantic-release` in your release workflow.
 
-```sh
-npm install --save-dev semantic-release-npm-github-publish
-```
-
-- Add `npx semantic-release` to a "Release" step of your CD setup
+For this repository itself, stable releases come from `main` and prereleases come from `beta` via `release.repo.config.js`. The exported shareable config remains branch-agnostic for consumers.
 
 ## Usage
 
-To use this sharable config, extend your semantic release configuration in `.releaserc.yaml`:
+Example `.releaserc.yaml`:
 
 ```yaml
-branch: master
+branches:
+  - main
+extends: "semantic-release-npm-github-publish"
 ci: false
 dryRun: false
 debug: false
-extends: "semantic-release-npm-github-publish"
 ```
+
+If your repository releases from a different branch, set `branches` explicitly in your repo-local config.
+
+## When To Use This Preset
+
+Use this package when you want:
+
+- the exact plugin chain documented above
+- extra patch releases for maintenance-only commit types
+- the opinionated changelog formatting in this repository
+- a maintained upgrade path for this preset over time
+
+Use repo-local plugin composition instead when your team wants different plugins, different release rules, or full control over upgrade timing.
+
+## Repository Maintenance Notes
+
+- Consumer-facing examples now use `main`.
+- Repository automation currently supports both `master` and `main` so maintenance is not blocked before the branch rename.
+- Repository automation also supports `beta` for prerelease validation and publishing.
+- Renaming this repository's default branch to `main` is still recommended to align hosted defaults, badges, and examples.
+- The old README wording that inverted `fix` and `feat` was documentation drift. The actual release behavior has been corrected and is now covered by tests.
 
 ## Contributing
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues).
+Issues and pull requests are welcome.
 
-## Build with
+## Built With
 
-- [Github actions](https://github.com/features/actions)
+- [GitHub Actions](https://github.com/features/actions)
 - [semantic-release](https://github.com/semantic-release/semantic-release)
-
----
-
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_

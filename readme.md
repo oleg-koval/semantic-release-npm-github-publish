@@ -1,14 +1,20 @@
 # semantic-release-npm-github-publish
 
-<p>
+<p align="center">
   <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/ci.yml" target="_blank">
     <img alt="CI" src="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/ci.yml/badge.svg?branch=main">
   </a>
   <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/release.yml" target="_blank">
     <img alt="Publish" src="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/release.yml/badge.svg?branch=main">
   </a>
+  <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/codeql-analysis.yml" target="_blank">
+    <img alt="CodeQL" src="https://github.com/oleg-koval/semantic-release-npm-github-publish/actions/workflows/codeql-analysis.yml/badge.svg?branch=main">
+  </a>
   <a href="https://www.npmjs.com/package/semantic-release-npm-github-publish" target="_blank">
     <img alt="npm" src="https://img.shields.io/npm/v/semantic-release-npm-github-publish.svg">
+  </a>
+  <a href="https://www.npmjs.com/package/semantic-release-npm-github-publish" target="_blank">
+    <img alt="npm downloads" src="https://img.shields.io/npm/dm/semantic-release-npm-github-publish.svg">
   </a>
   <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish/blob/main/LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -117,6 +123,7 @@ Use repo-local plugin composition instead when your team wants different plugins
 
 - Consumer-facing examples now use `main`.
 - Repository automation publishes stable releases from `main` and prereleases from `beta`.
+- The repository default branch is `main`, and all badges and examples now follow that.
 - Dependabot PRs can auto-refresh `package-lock.json` through the dedicated lockfile-fixer workflow.
 - The old README wording that inverted `fix` and `feat` was documentation drift. The actual release behavior has been corrected and is now covered by tests.
 

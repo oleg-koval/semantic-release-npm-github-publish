@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Opinionated semantic-release shareable config for npm and GitHub publishing with changelog generation and release commits."
+    />
+    <meta
+      name="keywords"
+      content="semantic-release, npm publish, github release, conventional commits, changelog"
+    />
+    <meta name="author" content="Oleg Koval" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="semantic-release-npm-github-publish | Semantic Release Preset"
+    />
+    <meta
+      property="og:description"
+      content="One maintained semantic-release preset for npm + GitHub publishing, changelog updates, and release commits."
+    />
+    <meta
+      property="og:url"
+      content="https://oleg-koval.github.io/semantic-release-npm-github-publish/"
+    />
+    <meta
+      property="og:image"
+      content="https://oleg-koval.github.io/semantic-release-npm-github-publish/assets/icon.svg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="semantic-release-npm-github-publish | Semantic Release Preset"
+    />
+    <meta
+      name="twitter:description"
+      content="Opinionated semantic-release config for npm and GitHub publishing."
+    />
+    <meta
+      name="twitter:image"
+      content="https://oleg-koval.github.io/semantic-release-npm-github-publish/assets/icon.svg"
+    />
+    <link
+      rel="canonical"
+      href="https://oleg-koval.github.io/semantic-release-npm-github-publish/"
+    />
+    <title>semantic-release-npm-github-publish</title>
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareSourceCode",
+        "name": "semantic-release-npm-github-publish",
+        "codeRepository": "https://github.com/oleg-koval/semantic-release-npm-github-publish",
+        "programmingLanguage": "JavaScript",
+        "license": "https://opensource.org/license/mit",
+        "description": "Opinionated semantic-release shareable configuration for npm and GitHub publishing with changelog generation and release commits.",
+        "url": "https://oleg-koval.github.io/semantic-release-npm-github-publish/"
+      }
+    </script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="hero">
+        <img class="logo" src="./assets/icon.svg" alt="Package icon" width="88" height="88" />
+        <p class="eyebrow">NPM PACKAGE</p>
+        <h1>semantic-release-npm-github-publish</h1>
+        <p class="lead">
+          One maintained preset for semantic-release that publishes to npm and GitHub, updates your
+          changelog, and commits the release artifacts.
+        </p>
+        <div class="cta-row">
+          <a href="#install" class="btn btn-primary">Install</a>
+          <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish" class="btn"
+            >Repository</a
+          >
+        </div>
+      </header>
+
+      <section class="panel" id="install">
+        <h2>Install</h2>
+        <pre><code>npm install --save-dev \
+  semantic-release \
+  semantic-release-npm-github-publish \
+  @semantic-release/changelog \
+  @semantic-release/commit-analyzer \
+  @semantic-release/git \
+  @semantic-release/github \
+  @semantic-release/npm \
+  @semantic-release/release-notes-generator</code></pre>
+      </section>
+
+      <section class="panel">
+        <h2>Usage</h2>
+        <pre><code>branches:
+  - main
+extends: "semantic-release-npm-github-publish"
+ci: false
+dryRun: false
+debug: false</code></pre>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <h3>Plugin chain</h3>
+          <p>
+            commit-analyzer → release-notes-generator → changelog → npm → git → github
+          </p>
+        </article>
+        <article class="card">
+          <h3>SemVer mapping</h3>
+          <p>
+            <code>fix</code> = patch, <code>feat</code> = minor, <code>BREAKING CHANGE</code> or
+            <code>!</code> = major.
+          </p>
+        </article>
+        <article class="card">
+          <h3>Extra patch rules</h3>
+          <p>
+            <code>build</code>, <code>ci</code>, <code>chore</code>, <code>docs</code>,
+            <code>refactor</code>, <code>style</code>, and <code>test</code> release as patch.
+          </p>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <a href="https://www.npmjs.com/package/semantic-release-npm-github-publish">npm</a>
+        <span>•</span>
+        <a href="https://github.com/oleg-koval/semantic-release-npm-github-publish">GitHub</a>
+      </footer>
+    </main>
+  </body>
+</html>

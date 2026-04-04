@@ -4,23 +4,30 @@ on:
   push:
     branches:
       - master
+      - main
+      - beta
 
 jobs:
   publish:
-    name: Publish to Github & NPM or Github Package Registry
+    name: Publish to GitHub and npm
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - env:
-          CI: true
+          node-version: 24
+          cache: npm
+      - name: Install dependencies
         run: npm ci
-      - if: success()
+      - name: Publish release
         env:
           CI: true
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: npm run semantic-release

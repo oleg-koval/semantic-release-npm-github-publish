@@ -23,6 +23,8 @@
 
 > Opinionated `semantic-release` shareable configuration for npm + GitHub publishing with changelog generation and release commits.
 
+Website: https://oleg-koval.github.io/semantic-release-npm-github-publish/
+
 ## About
 
 This package is useful if you want one maintained preset instead of repeating the same `semantic-release` plugin composition in every repository.

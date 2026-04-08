@@ -46,6 +46,7 @@
     ".releaserc.json",
     "release.config.js"
   ],
+  "homepage": "https://oleg-koval.github.io/semantic-release-npm-github-publish/",
   "license": "MIT",
   "main": "release.config.js",
   "name": "semantic-release-npm-github-publish",

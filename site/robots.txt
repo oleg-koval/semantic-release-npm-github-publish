@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://oleg-koval.github.io/semantic-release-npm-github-publish/sitemap.xml

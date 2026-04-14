@@ -1,3 +1,10 @@
+## [1.7.4-beta.2](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.4-beta.1...v1.7.4-beta.2) (2026-04-14)
+
+
+### ♻️ Chores
+
+* **deps:** bump the npm_and_yarn group across 1 directory with 3 updates ([#65](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/65)) ([e34b812](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/e34b8122efac6e3ad4660d28ec3fc1f5cde6e1c0))
+
 ## [1.7.4-beta.1](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.3...v1.7.4-beta.1) (2026-04-04)
 
 

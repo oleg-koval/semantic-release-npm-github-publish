@@ -1,0 +1,22 @@
+name: Bot automerge
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, ready_for_review, edited]
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+  statuses: read
+  issues: write
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: oleg-koval/pr-automerge-github-action@v1
+        with:
+          github-token: ${{ github.token }}
+          maintainer-handles: oleg-koval
+          merge-method: squash

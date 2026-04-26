@@ -70,6 +70,6 @@
   "docsIndexKeeper": {
     "indexFile": "docs/README.md"
   },
-  "version": "1.7.4-beta.2",
+  "version": "1.7.4-beta.3",
   "snyk": true
 }

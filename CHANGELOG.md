@@ -1,3 +1,10 @@
+## [1.7.4-beta.3](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.4-beta.2...v1.7.4-beta.3) (2026-04-26)
+
+
+### ⚙️ Continuous Integrations
+
+* add bot automerge workflow ([#66](https://github.com/oleg-koval/semantic-release-npm-github-publish/issues/66)) ([f41671a](https://github.com/oleg-koval/semantic-release-npm-github-publish/commit/f41671aafb1e61ec6f259e6e6bdcf0b756029de2))
+
 ## [1.7.4-beta.2](https://github.com/oleg-koval/semantic-release-npm-github-publish/compare/v1.7.4-beta.1...v1.7.4-beta.2) (2026-04-14)
 
 

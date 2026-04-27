@@ -3,6 +3,10 @@ name: Bot automerge
 on:
   pull_request_target:
     types: [opened, reopened, synchronize, ready_for_review, edited]
+  check_suite:
+    types: [completed]
+  pull_request_review:
+    types: [submitted]
 
 permissions:
   contents: write

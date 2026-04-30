@@ -51,7 +51,7 @@ jobs:
     needs: validate
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
     permissions:
-      contents: read
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4

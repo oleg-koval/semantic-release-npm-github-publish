@@ -63,7 +63,7 @@
     "release:dry-run": "node ./scripts/release-dry-run.mjs",
     "test": "node --test",
     "test:config": "node -e \"const config = require('./release.config.js'); if (!Array.isArray(config.plugins) || config.plugins.length === 0) { throw new Error('release config did not load plugins'); }\"",
-    "semantic-release": "semantic-release --extends ./release.repo.config.js",
+    "semantic-release": "node ./scripts/release-main.mjs",
     "snyk-protect": "snyk-protect",
     "prepare": "npm run snyk-protect"
   },

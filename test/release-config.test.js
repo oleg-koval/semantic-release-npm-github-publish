@@ -52,6 +52,18 @@ test('keeps beta prereleases as a repo-only branch policy', () => {
 	]);
 });
 
+test('keeps repo releases compatible with protected main', () => {
+	assert.deepEqual(
+		repoReleaseConfig.plugins.map(plugin => Array.isArray(plugin) ? plugin[0] : plugin),
+		[
+			'@semantic-release/commit-analyzer',
+			'@semantic-release/release-notes-generator',
+			'@semantic-release/npm',
+			'@semantic-release/github',
+		]
+	);
+});
+
 test('uses auth-free plugins for release dry runs', () => {
 	assert.deepEqual(
 		dryRunReleaseConfig.plugins.map(plugin => Array.isArray(plugin) ? plugin[0] : plugin),

@@ -1,0 +1,23 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">semantic-release-npm-github-publish social preview</title>
+  <desc id="desc">Oldschool package card for a semantic-release preset that publishes npm and GitHub releases.</desc>
+  <rect width="1200" height="630" fill="#f4f0dc"/>
+  <rect x="34" y="34" width="1132" height="562" fill="#fffbed" stroke="#111111" stroke-width="4"/>
+  <rect x="54" y="54" width="1092" height="72" fill="#111111"/>
+  <text x="80" y="100" fill="#f4f0dc" font-family="Courier New, monospace" font-size="28" font-weight="700">npm + github release preset</text>
+  <g transform="translate(84 174)">
+    <rect width="156" height="156" rx="34" fill="#0f7a42"/>
+    <circle cx="78" cy="78" r="42" fill="none" stroke="#d6f4e3" stroke-width="9"/>
+    <path d="M78 36v10m0 64v10M36 78h10m64 0h10" stroke="#d6f4e3" stroke-width="8" stroke-linecap="round"/>
+    <path d="M61 84l13 14 25-27" fill="none" stroke="#f2fff7" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="280" y="218" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">semantic-release</text>
+  <text x="280" y="284" fill="#111111" font-family="Arial, Helvetica, sans-serif" font-size="58" font-weight="700">npm github publish</text>
+  <text x="280" y="344" fill="#263529" font-family="Courier New, monospace" font-size="25">one maintained config for automated package releases</text>
+  <g fill="#111111" font-family="Courier New, monospace" font-size="25">
+    <text x="88" y="426">[x] semantic-release plugin chain</text>
+    <text x="88" y="474">[x] changelog + release commits</text>
+    <text x="88" y="522">[x] npm publish + GitHub releases</text>
+  </g>
+  <text x="808" y="526" fill="#0f7a42" font-family="Courier New, monospace" font-size="25" font-weight="700">npm i -D semantic-release-npm-github-publish</text>
+</svg>

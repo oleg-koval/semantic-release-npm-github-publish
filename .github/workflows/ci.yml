@@ -42,6 +42,9 @@ jobs:
       - name: Smoke-load release config
         run: npm run test:config
 
+      - name: Check package contents
+        run: npm run pack:check
+
       - name: Check docs index
         run: npm run docs:index:check
 

@@ -9,15 +9,17 @@ on:
     types: [submitted]
 
 permissions:
-  contents: write
-  pull-requests: write
-  checks: read
-  statuses: read
-  issues: write
+  contents: read
 
 jobs:
   automerge:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      checks: read
+      statuses: read
+      issues: write
     steps:
       - uses: oleg-koval/pr-automerge-github-action@39316e1ba4f70de3f1576da572866841578be442 # v1.5.0
         with:

@@ -143,8 +143,7 @@ Use repo-local plugin composition when your team wants different plugins, differ
 - Consumer-facing examples use `main`.
 - Repository automation publishes stable releases from `main` and prereleases from `beta`.
 - The shared preset does not hardcode release branches for consumers.
-- Dependabot PRs can auto-refresh `package-lock.json` through the dedicated lockfile-fixer workflow.
-- Dependabot npm patch updates can enable GitHub auto-merge after required checks pass.
+- Dependabot npm patch updates can enable GitHub auto-merge after required checks pass. If a Dependabot update has lockfile conflicts, regenerate `package-lock.json` from the update branch using the repository’s npm version, commit the lockfile, and re-run CI; the former privileged automatic fixer was removed because it could expose write credentials to untrusted PR code.
 
 ## System Requirements
 

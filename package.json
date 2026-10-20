@@ -14,15 +14,15 @@
   },
   "description": "Opinionated semantic-release shareable configuration for npm and GitHub publishing with changelog generation and release commits.",
   "devDependencies": {
-    "@semantic-release/changelog": "6.0.3",
+    "@semantic-release/changelog": "7.0.0",
     "@semantic-release/commit-analyzer": "13.0.1",
-    "@semantic-release/git": "10.0.1",
-    "@semantic-release/github": "12.0.6",
+    "@semantic-release/git": "11.0.1",
+    "@semantic-release/github": "12.0.10",
     "@semantic-release/npm": "13.2.0",
-    "@semantic-release/release-notes-generator": "14.1.0",
+    "@semantic-release/release-notes-generator": "14.1.1",
     "@snyk/protect": "^1.1097.0",
     "docs-index-keeper": "^1.1.0",
-    "semantic-release": "25.0.3",
+    "semantic-release": "25.0.9",
     "yaml": "2.9.1"
   },
   "files": [

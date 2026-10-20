@@ -1,0 +1,24 @@
+# Managed by oleg-koval/fleet. Local edits are overwritten on the next sync;
+# put repo-specific changes in fleet's repos/<repo>.yml.
+#
+# All dependency updates (major, minor, patch) across every ecosystem below
+# land in one weekly PR. If a major breaks CI, fix it in that PR or add an
+# ignore rule for that dependency in fleet's repos/<repo>.yml.
+version: 2
+multi-ecosystem-groups:
+  weekly:
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "08:00"
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    patterns:
+      - "*"
+    multi-ecosystem-group: "weekly"
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    patterns:
+      - "*"
+    multi-ecosystem-group: "weekly"

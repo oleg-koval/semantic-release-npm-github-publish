@@ -103,7 +103,7 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           repository: oleg-koval/pr-automerge-github-action
-          ref: 0ce5a36e264c296c8d542adc715540fcd466ae56
+          ref: 4e12f963b26ab78adb5d9e7ee032bcc2089be094
           path: .fleet-automerge-action
           persist-credentials: false
       - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
@@ -121,6 +121,6 @@ jobs:
           INPUT_MAINTAINER_HANDLES: oleg-koval
           INPUT_IGNORED_CHECK_NAMES: automerge,automerge (${{ matrix.pr-number }})
           INPUT_AUTOMERGE_WORKFLOW_PATH: .github/workflows/fleet-automerge.yml
-          INPUT_NO_PR_COMMENTS: 'true'
+          INPUT_SUPPRESS_COMMENTS: 'true'
           INPUT_PR_NUMBER: ${{ matrix.pr-number }}
         run: '"$RUNNER_TEMP/fleet-automerge"'

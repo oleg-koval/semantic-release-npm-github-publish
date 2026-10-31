@@ -26,7 +26,7 @@ jobs:
   discover:
     permissions:
       pull-requests: read
-    # Docker actions need Linux; private repos share NAS and Mac VM capacity.
+    # Private repos share the self-hosted queue across NAS and Mac Linux runners.
     runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","Linux"]') || 'ubuntu-latest' }}
     outputs:
       pr-numbers: ${{ steps.list.outputs.pr-numbers }}
@@ -89,7 +89,7 @@ jobs:
       issues: read
       checks: read
       statuses: read
-    # Docker actions need Linux; private repos share NAS and Mac VM capacity.
+    # Private repos share the self-hosted queue across NAS and Mac Linux runners.
     runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","Linux"]') || 'ubuntu-latest' }}
     strategy:
       fail-fast: false
@@ -99,12 +99,28 @@ jobs:
       group: fleet-automerge-${{ matrix.pr-number }}
       cancel-in-progress: false
     steps:
-      - uses: oleg-koval/pr-automerge-github-action@0ce5a36e264c296c8d542adc715540fcd466ae56 # no comments; checks and review threads gated
+      # Run the same pinned action without requiring Docker access on the runner.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          github-token: ${{ github.token }}
-          bot-logins: oleg-koval-fleet[bot],oleg-koval
-          maintainer-handles: oleg-koval
-          ignored-check-names: automerge,automerge (${{ matrix.pr-number }})
-          automerge-workflow-path: .github/workflows/fleet-automerge.yml
-          no-pr-comments: true
-          pr-number: ${{ matrix.pr-number }}
+          repository: oleg-koval/pr-automerge-github-action
+          ref: 0ce5a36e264c296c8d542adc715540fcd466ae56
+          path: .fleet-automerge-action
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version: '1.27.x'
+          cache: false
+      - name: Build pinned automerge action
+        env:
+          CGO_ENABLED: '0'
+        run: go build -C .fleet-automerge-action -o "$RUNNER_TEMP/fleet-automerge" ./cmd/pr-automerge-action
+      - name: Run pinned automerge action
+        env:
+          INPUT_GITHUB_TOKEN: ${{ github.token }}
+          INPUT_BOT_LOGINS: oleg-koval-fleet[bot],oleg-koval
+          INPUT_MAINTAINER_HANDLES: oleg-koval
+          INPUT_IGNORED_CHECK_NAMES: automerge,automerge (${{ matrix.pr-number }})
+          INPUT_AUTOMERGE_WORKFLOW_PATH: .github/workflows/fleet-automerge.yml
+          INPUT_NO_PR_COMMENTS: 'true'
+          INPUT_PR_NUMBER: ${{ matrix.pr-number }}
+        run: '"$RUNNER_TEMP/fleet-automerge"'

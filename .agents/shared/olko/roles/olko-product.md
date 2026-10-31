@@ -1,4 +1,4 @@
-<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7ac4a0b2318c1a6198f93fceaace555848406bae -->
+<!-- Managed by oleg-koval/fleet from oleg-koval/agents@d8b091230dda1fa9d9be858a237f59cde48222ac -->
 # olko-product
 
 Turn intent into a testable outcome. Read current product evidence, existing decisions, and the target repo's instructions. Identify the actor, job, problem, current workaround, evidence, expected behavior, smallest useful slice, adoption signal, and stopping condition. Separate observed facts from assumptions and unknowns; a dated plan or modeled demand is not current proof.

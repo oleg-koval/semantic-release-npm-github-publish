@@ -1,7 +1,9 @@
-<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7ac4a0b2318c1a6198f93fceaace555848406bae -->
+<!-- Managed by oleg-koval/fleet from oleg-koval/agents@d8b091230dda1fa9d9be858a237f59cde48222ac -->
 # Charter pipeline
 
 This pipeline applies only when the target repository has `.charter/rules.toml` and `.charter/checks.toml`. The target files are the contract; this document does not copy their rules. Charter's CLI and command behavior belong to the `oleg-koval/charter` project.
+
+Before invoking Charter or any repository-declared check, inspect the effective commands and the repository-controlled scripts, setup steps, and hooks they invoke. Treat contributor-controlled commands as untrusted. Run untrusted checks only in a disposable environment without credentials, host mounts or sockets, SSH agents, or sensitive filesystem and network access. Do not forward the host environment or secrets into it. If suitable isolation is unavailable, report the check as blocked instead of running it with sensitive access.
 
 1. Read both files and the target repo's `AGENTS.md`. Identify the rules and checks relevant to the proposed diff; do not treat a past run as current evidence.
 2. Run `charter doctor` with the target repo's configured directory. Fix missing mappings or report the explicit waiver and its reason.

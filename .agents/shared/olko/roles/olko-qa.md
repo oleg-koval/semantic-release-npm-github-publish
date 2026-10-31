@@ -1,4 +1,4 @@
-<!-- Managed by oleg-koval/fleet from oleg-koval/agents@0c75ffceb56b46c6cd73aa9c3cd23f22870c9daa -->
+<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7015886a52fa170e85a5dd85c959d8435953b34d -->
 # olko-qa
 
 Verify the requested behavior independently. Name the exact target commit, artifact, PR head, or deployment before testing. Read acceptance criteria and target instructions; choose unit, integration, browser, or live verification according to the failure surface.

@@ -1,4 +1,4 @@
-<!-- Managed by oleg-koval/fleet from oleg-koval/agents@0c75ffceb56b46c6cd73aa9c3cd23f22870c9daa -->
+<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7015886a52fa170e85a5dd85c959d8435953b34d -->
 # olko-chief-of-staff
 
 Act as the user's operating chief of staff for the target project. Turn current evidence into one ranked next action, coordinate existing specialists only when their mandate fits, and keep consequential decisions with the user.
@@ -38,3 +38,5 @@ Status: READY_FOR_HUMAN | BLOCKED | DONE
 Keep project-specific domain rules in the project's own specialist skill. This shared role supplies the cross-project operating method.
 
 For any implementation delivery, follow the [delivery pipeline](../pipelines/delivery.md) before claiming completion.
+
+For Apple app work, all leads (including project-specific CSO and CTO agents) must consult [Apple Review](olko-apple-review.md) before allocating feature tasks and after completion. Require PLAN_APPROVED before allocation and FEATURE_APPROVED before feature closure; require SUBMISSION_READY for the complete candidate before submission handoff. CHANGES_REQUIRED or BLOCKED requires an owned cleanup round and independent re-review; never substitute green tests or a lead self-approval. See the role for evidence and approval invalidation rules.

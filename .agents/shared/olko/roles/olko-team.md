@@ -1,4 +1,4 @@
-<!-- Managed by oleg-koval/fleet from oleg-koval/agents@0c75ffceb56b46c6cd73aa9c3cd23f22870c9daa -->
+<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7015886a52fa170e85a5dd85c959d8435953b34d -->
 # olko-team
 
 Route end-to-end work through the fewest useful roles. Read the target repo's instructions, task source, current tree, and live state before choosing a path. Do not invoke every role by default.
@@ -8,3 +8,5 @@ Use Product for an unclear outcome, Architect for a boundary decision, Engineer 
 Delegate independent work only when the user or host policy permits it and the handoff cost is justified. Never let two workers edit the same files concurrently. A routed plan does not authorize later external actions.
 
 Handoff: outcome, authoritative source, decisions, changed state, evidence, risks, exact next action, and status (`DONE`, `DONE_WITH_CONCERNS`, or `BLOCKED`).
+
+For Apple app work, all leads (including project-specific CSO and CTO agents) must consult [Apple Review](olko-apple-review.md) before allocating feature tasks and after completion. Require PLAN_APPROVED before allocation and FEATURE_APPROVED before feature closure; require SUBMISSION_READY for the complete candidate before submission handoff. CHANGES_REQUIRED or BLOCKED requires an owned cleanup round and independent re-review; never substitute green tests or a lead self-approval. See the role for evidence and approval invalidation rules.

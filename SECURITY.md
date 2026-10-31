@@ -2,22 +2,20 @@
 
 ## Supported Versions
 
-This package is maintained on the latest published npm version and the active `main` branch.
+| Version        | Supported           |
+| -------------- | ------------------- |
+| Latest minor   | Yes                 |
+| Previous minor | Security fixes only |
+| Older          | No                  |
 
 ## Reporting a Vulnerability
 
-Please report security issues privately by opening a GitHub security advisory:
+**Please do not open a public GitHub issue for security vulnerabilities.**
 
-https://github.com/oleg-koval/semantic-release-npm-github-publish/security/advisories/new
+Email **oleg@bizcuit.nl** with:
 
-Do not include sensitive vulnerability details in public issues.
+1. A description of the vulnerability and its potential impact
+2. Steps to reproduce or a proof-of-concept
+3. Any suggested fixes (optional but appreciated)
 
-## Scope
-
-This package is a shareable `semantic-release` configuration. Reports are most useful when they include:
-
-- affected version
-- minimal reproduction repository or config
-- observed impact during release execution
-- relevant logs with tokens and secrets removed
-
+You will receive an acknowledgement within 48 hours and a resolution timeline within 7 days.

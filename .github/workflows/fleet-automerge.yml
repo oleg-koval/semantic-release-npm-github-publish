@@ -1,0 +1,108 @@
+name: Fleet PR automerge
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, ready_for_review]
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+  pull_request_review_comment:
+    types: [created, edited, deleted]
+  issue_comment:
+    types: [created, edited, deleted]
+  check_suite:
+    types: [completed]
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      pr-number:
+        description: Pull request number to retry; blank retries all Fleet PRs
+        required: false
+        type: string
+
+permissions: {}
+
+jobs:
+  discover:
+    permissions:
+      pull-requests: read
+    runs-on: ubuntu-latest
+    outputs:
+      pr-numbers: ${{ steps.list.outputs.pr-numbers }}
+    steps:
+      - id: list
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          REQUESTED_PR_NUMBER: ${{ inputs.pr-number || '' }}
+        run: |
+          set -euo pipefail
+          case "$EVENT_NAME" in
+            schedule)
+              candidates="$(gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" --jq '.[] | select(.head.ref == "fleet/sync") | .number' | jq -Rsc 'split("\n") | map(select(length > 0) | tonumber)')"
+              ;;
+            workflow_dispatch)
+              if [[ -n "$REQUESTED_PR_NUMBER" ]]; then
+                if [[ ! "$REQUESTED_PR_NUMBER" =~ ^[1-9][0-9]*$ ]]; then
+                  echo "Invalid pull request number: $REQUESTED_PR_NUMBER" >&2
+                  exit 1
+                fi
+                candidates="[$REQUESTED_PR_NUMBER]"
+              else
+                candidates="$(gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" --jq '.[] | select(.head.ref == "fleet/sync") | .number' | jq -Rsc 'split("\n") | map(select(length > 0) | tonumber)')"
+              fi
+              ;;
+            check_suite)
+              candidates="$(jq -c '[.check_suite.pull_requests[]?.number | select(type == "number")] | unique' "$GITHUB_EVENT_PATH")"
+              ;;
+            issue_comment)
+              candidates="$(jq -c '[.issue | select(.pull_request != null) | .number | select(type == "number")]' "$GITHUB_EVENT_PATH")"
+              ;;
+            *)
+              candidates="$(jq -c '[.pull_request.number | select(type == "number")]' "$GITHUB_EVENT_PATH")"
+              ;;
+          esac
+          pr_numbers='[]'
+          while IFS= read -r number; do
+            [[ "$number" =~ ^[1-9][0-9]*$ ]] || continue
+            head_ref="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number" --jq '.head.ref')"
+            if [[ "$head_ref" == "fleet/sync" ]]; then
+              pr_numbers="$(jq -c --argjson number "$number" '. + [$number]' <<< "$pr_numbers")"
+            fi
+          done < <(jq -r '.[]' <<< "$candidates")
+          count="$(jq 'length' <<< "$pr_numbers")"
+          if (( count > 255 )); then
+            echo "Found $count Fleet PRs, exceeding GitHub's 256-job workflow limit; refusing to skip retries." >&2
+            exit 1
+          fi
+          printf 'pr-numbers=%s\n' "$pr_numbers" >> "$GITHUB_OUTPUT"
+        shell: bash
+
+  automerge:
+    needs: discover
+    if: needs.discover.result == 'success' && needs.discover.outputs.pr-numbers != '[]'
+    permissions:
+      actions: read
+      contents: write
+      pull-requests: write
+      issues: read
+      checks: read
+      statuses: read
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        pr-number: ${{ fromJSON(needs.discover.outputs.pr-numbers) }}
+    concurrency:
+      group: fleet-automerge-${{ matrix.pr-number }}
+      cancel-in-progress: false
+    steps:
+      - uses: oleg-koval/pr-automerge-github-action@0ce5a36e264c296c8d542adc715540fcd466ae56 # no comments; checks and review threads gated
+        with:
+          github-token: ${{ github.token }}
+          bot-logins: oleg-koval-fleet[bot]
+          maintainer-handles: oleg-koval
+          ignored-check-names: automerge,automerge (${{ matrix.pr-number }})
+          automerge-workflow-path: .github/workflows/fleet-automerge.yml
+          no-pr-comments: true
+          pr-number: ${{ matrix.pr-number }}

@@ -1,4 +1,4 @@
-<!-- Managed by oleg-koval/fleet from oleg-koval/agents@2cef368851d831ebf91f48f7cde853353e6cd256 -->
+<!-- Managed by oleg-koval/fleet from oleg-koval/agents@0c75ffceb56b46c6cd73aa9c3cd23f22870c9daa -->
 # olko-team
 
 Route end-to-end work through the fewest useful roles. Read the target repo's instructions, task source, current tree, and live state before choosing a path. Do not invoke every role by default.

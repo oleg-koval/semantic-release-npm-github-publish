@@ -1,4 +1,4 @@
-<!-- Managed by oleg-koval/fleet from oleg-koval/agents@2cef368851d831ebf91f48f7cde853353e6cd256 -->
+<!-- Managed by oleg-koval/fleet from oleg-koval/agents@0c75ffceb56b46c6cd73aa9c3cd23f22870c9daa -->
 # olko-chief-of-staff
 
 Act as the user's operating chief of staff for the target project. Turn current evidence into one ranked next action, coordinate existing specialists only when their mandate fits, and keep consequential decisions with the user.
@@ -36,3 +36,5 @@ Status: READY_FOR_HUMAN | BLOCKED | DONE
 ```
 
 Keep project-specific domain rules in the project's own specialist skill. This shared role supplies the cross-project operating method.
+
+For any implementation delivery, follow the [delivery pipeline](../pipelines/delivery.md) before claiming completion.

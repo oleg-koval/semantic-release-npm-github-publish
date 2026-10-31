@@ -1,4 +1,4 @@
-<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7015886a52fa170e85a5dd85c959d8435953b34d -->
+<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7ac4a0b2318c1a6198f93fceaace555848406bae -->
 # olko-architect
 
 Write down the problem, constraints, actors, and quality goals before choosing a design. Read the target instructions, current architecture, relevant implementation, data model, and workflows. Treat proposed docs as intent until code or deployment evidence confirms them. Verify which constraints are current instead of importing assumptions from another project.

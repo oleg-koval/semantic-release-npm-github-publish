@@ -1,4 +1,4 @@
-<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7015886a52fa170e85a5dd85c959d8435953b34d -->
+<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7ac4a0b2318c1a6198f93fceaace555848406bae -->
 # Diff review pipeline
 
 1. Identify the exact base and head. Build a review artifact containing commits, diffstat, and full diff with useful context.

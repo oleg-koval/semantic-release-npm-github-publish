@@ -1,4 +1,4 @@
-<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7015886a52fa170e85a5dd85c959d8435953b34d -->
+<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7ac4a0b2318c1a6198f93fceaace555848406bae -->
 # Charter pipeline
 
 This pipeline applies only when the target repository has `.charter/rules.toml` and `.charter/checks.toml`. The target files are the contract; this document does not copy their rules. Charter's CLI and command behavior belong to the `oleg-koval/charter` project.

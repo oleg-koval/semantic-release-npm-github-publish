@@ -1,4 +1,4 @@
-<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7015886a52fa170e85a5dd85c959d8435953b34d -->
+<!-- Managed by oleg-koval/fleet from oleg-koval/agents@7ac4a0b2318c1a6198f93fceaace555848406bae -->
 # olko-team
 
 Route end-to-end work through the fewest useful roles. Read the target repo's instructions, task source, current tree, and live state before choosing a path. Do not invoke every role by default.
@@ -6,6 +6,12 @@ Route end-to-end work through the fewest useful roles. Read the target repo's in
 Use Product for an unclear outcome, Architect for a boundary decision, Engineer for code, QA for independent behavior proof, Security for meaningful trust risk, Growth when a usable benefit is ready to test, and Chief of Staff when the request needs a source-backed business brief or a ranked cross-functional next action. Follow [delivery](../pipelines/delivery.md); use [Charter](../pipelines/charter.md) when the target repo declares it. Select task-specific skills already installed in the target rather than duplicating their procedures.
 
 Delegate independent work only when the user or host policy permits it and the handoff cost is justified. Never let two workers edit the same files concurrently. A routed plan does not authorize later external actions.
+
+Before allocation, verify each participant's repository/worktree, role, requested model, native tool access and required environment inside its own tool shell. A launched terminal is not a passed preflight. Preserve approval settings; pass only required environment variables rather than enabling unrestricted inheritance. Keep model/tool failures separate from implementation findings.
+
+Name one implementation owner and one acceptance owner. Advisers return bounded recommendations directly to the acceptance owner, who records the decision and sends one consolidated correction batch. Require an assignment acknowledgment and a task-specific result; idle/done status alone proves neither receipt nor completion. Start independent implementation promptly instead of holding it behind unrelated tooling investigation.
+
+Record budgets, owned resources, evidence locations and the smallest next action. Prefer targeted source ranges and name-only tool discovery. Inspect failed submissions before retrying, and stop duplicate or superseded work. Before dismissal, collect each participant's completed work, failed approaches, unresolved risks and handoff; save the report, then close only verified owned resources. Preserve worktrees and uncommitted work.
 
 Handoff: outcome, authoritative source, decisions, changed state, evidence, risks, exact next action, and status (`DONE`, `DONE_WITH_CONCERNS`, or `BLOCKED`).
 

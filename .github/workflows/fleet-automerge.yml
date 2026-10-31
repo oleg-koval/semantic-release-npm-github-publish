@@ -26,7 +26,8 @@ jobs:
   discover:
     permissions:
       pull-requests: read
-    runs-on: ubuntu-latest
+    # Docker actions need Linux; private repos share NAS and Mac VM capacity.
+    runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","Linux"]') || 'ubuntu-latest' }}
     outputs:
       pr-numbers: ${{ steps.list.outputs.pr-numbers }}
     steps:
@@ -88,7 +89,8 @@ jobs:
       issues: read
       checks: read
       statuses: read
-    runs-on: ubuntu-latest
+    # Docker actions need Linux; private repos share NAS and Mac VM capacity.
+    runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","Linux"]') || 'ubuntu-latest' }}
     strategy:
       fail-fast: false
       matrix:

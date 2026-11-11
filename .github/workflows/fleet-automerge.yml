@@ -1,0 +1,126 @@
+name: Fleet PR automerge
+
+on:
+  pull_request_target:
+    types: [opened, reopened, synchronize, ready_for_review]
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+  pull_request_review_comment:
+    types: [created, edited, deleted]
+  issue_comment:
+    types: [created, edited, deleted]
+  check_suite:
+    types: [completed]
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch:
+    inputs:
+      pr-number:
+        description: Pull request number to retry; blank retries all eligible PRs
+        required: false
+        type: string
+
+permissions: {}
+
+jobs:
+  discover:
+    permissions:
+      pull-requests: read
+    # Private repos share the self-hosted queue across NAS and Mac Linux runners.
+    runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","Linux"]') || 'ubuntu-latest' }}
+    outputs:
+      pr-numbers: ${{ steps.list.outputs.pr-numbers }}
+    steps:
+      - id: list
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          REQUESTED_PR_NUMBER: ${{ inputs.pr-number || '' }}
+        run: |
+          set -euo pipefail
+          case "$EVENT_NAME" in
+            schedule)
+              candidates="$(gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" --jq '.[] | select(.head.repo.full_name == .base.repo.full_name and (.head.ref == "fleet/sync" or .user.login == "oleg-koval")) | .number' | jq -Rsc 'split("\n") | map(select(length > 0) | tonumber)')"
+              ;;
+            workflow_dispatch)
+              if [[ -n "$REQUESTED_PR_NUMBER" ]]; then
+                if [[ ! "$REQUESTED_PR_NUMBER" =~ ^[1-9][0-9]*$ ]]; then
+                  echo "Invalid pull request number: $REQUESTED_PR_NUMBER" >&2
+                  exit 1
+                fi
+                candidates="[$REQUESTED_PR_NUMBER]"
+              else
+                candidates="$(gh api --paginate "repos/$GITHUB_REPOSITORY/pulls?state=open&per_page=100" --jq '.[] | select(.head.repo.full_name == .base.repo.full_name and (.head.ref == "fleet/sync" or .user.login == "oleg-koval")) | .number' | jq -Rsc 'split("\n") | map(select(length > 0) | tonumber)')"
+              fi
+              ;;
+            check_suite)
+              candidates="$(jq -c '[.check_suite.pull_requests[]?.number | select(type == "number")] | unique' "$GITHUB_EVENT_PATH")"
+              ;;
+            issue_comment)
+              candidates="$(jq -c '[.issue | select(.pull_request != null) | .number | select(type == "number")]' "$GITHUB_EVENT_PATH")"
+              ;;
+            *)
+              candidates="$(jq -c '[.pull_request.number | select(type == "number")]' "$GITHUB_EVENT_PATH")"
+              ;;
+          esac
+          pr_numbers='[]'
+          while IFS= read -r number; do
+            [[ "$number" =~ ^[1-9][0-9]*$ ]] || continue
+            eligible="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number" --jq '.head.repo.full_name == .base.repo.full_name and (.head.ref == "fleet/sync" or .user.login == "oleg-koval")')"
+            if [[ "$eligible" == "true" ]]; then
+              pr_numbers="$(jq -c --argjson number "$number" '. + [$number]' <<< "$pr_numbers")"
+            fi
+          done < <(jq -r '.[]' <<< "$candidates")
+          count="$(jq 'length' <<< "$pr_numbers")"
+          if (( count > 255 )); then
+            echo "Found $count Fleet PRs, exceeding GitHub's 256-job workflow limit; refusing to skip retries." >&2
+            exit 1
+          fi
+          printf 'pr-numbers=%s\n' "$pr_numbers" >> "$GITHUB_OUTPUT"
+        shell: bash
+
+  automerge:
+    needs: discover
+    if: needs.discover.result == 'success' && needs.discover.outputs.pr-numbers != '[]'
+    permissions:
+      actions: read
+      contents: write
+      pull-requests: write
+      issues: read
+      checks: read
+      statuses: read
+    # Private repos share the self-hosted queue across NAS and Mac Linux runners.
+    runs-on: ${{ github.event.repository.private && fromJSON('["self-hosted","Linux"]') || 'ubuntu-latest' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        pr-number: ${{ fromJSON(needs.discover.outputs.pr-numbers) }}
+    concurrency:
+      group: fleet-automerge-${{ matrix.pr-number }}
+      cancel-in-progress: false
+    steps:
+      # Run the same pinned action without requiring Docker access on the runner.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: oleg-koval/pr-automerge-github-action
+          ref: 4e12f963b26ab78adb5d9e7ee032bcc2089be094
+          path: .fleet-automerge-action
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version: '1.27.x'
+          cache: false
+      - name: Build pinned automerge action
+        env:
+          CGO_ENABLED: '0'
+        run: go build -C .fleet-automerge-action -o "$RUNNER_TEMP/fleet-automerge" ./cmd/pr-automerge-action
+      - name: Run pinned automerge action
+        env:
+          INPUT_GITHUB_TOKEN: ${{ github.token }}
+          INPUT_BOT_LOGINS: oleg-koval-fleet[bot],oleg-koval
+          INPUT_MAINTAINER_HANDLES: oleg-koval
+          INPUT_IGNORED_CHECK_NAMES: automerge,automerge (${{ matrix.pr-number }})
+          INPUT_AUTOMERGE_WORKFLOW_PATH: .github/workflows/fleet-automerge.yml
+          INPUT_SUPPRESS_COMMENTS: 'true'
+          INPUT_PR_NUMBER: ${{ matrix.pr-number }}
+        run: '"$RUNNER_TEMP/fleet-automerge"'

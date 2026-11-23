@@ -22,7 +22,7 @@
     "@semantic-release/release-notes-generator": "14.1.1",
     "@snyk/protect": "^1.1097.0",
     "docs-index-keeper": "^1.1.0",
-    "semantic-release": "25.0.9",
+    "semantic-release": "26.0.1",
     "yaml": "2.9.1"
   },
   "files": [
